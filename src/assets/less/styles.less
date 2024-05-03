@@ -1,0 +1,38 @@
+@main-color: #212121;
+@white: #fff;
+@contrast: #4580b8;
+
+main {
+  padding: 50px;
+  background-color: @main-color;
+  min-height: 100dvh;
+}
+
+.navbar{
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  background-color: darken(@main-color, 10%);
+  a{
+    color: @white;
+    &.active{
+      color: @contrast!important;
+    }
+  }
+
+  .dropdown-menu{
+    &.show{
+      background-color: lighten(@main-color, 20%);
+    }
+    .dropdown-item{
+      &:focus, &:hover{
+        background-color: lighten(@main-color, 30%);
+      }
+    }
+  }
+
+  .form-control{
+      background-color: lighten(@main-color, 6git 0%);
+      color: #212121;
+  }
+}
