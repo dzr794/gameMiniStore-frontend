@@ -12,6 +12,8 @@
     "@types/backbone": "^1.4.19",
     "@types/jquery": "^3.5.29",
     "@types/underscore": "^1.11.15",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
     "less": "^4.2.0",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
