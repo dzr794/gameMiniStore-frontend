@@ -5,13 +5,44 @@
 @bg-dark-3: #262833;
 @border-dark-1: #2d303b;
 
-@container-width: 1240px;
+@header-height: 70px;
+
+@section-spacing: 50px;
+@section-border-top-color: #262833; 
+
+
+@container-width: var(--bs-breakpoint-xl);
+
+:root{
+  --bs-heading-color: @white;
+}
 
 main {
-  padding: 50px;
-  padding-top: 100px;
+  padding-top: @header-height;
   background-color: @main-color;
   min-height: 100dvh;
+
+  .section{
+    width: 100%;
+    padding: @section-spacing 0;
+    border-top: 1px solid @section-border-top-color;
+
+    &:nth-child(2n){
+      background-color: darken(@main-color, 2%);
+    }
+
+    .section-title{
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+  }
+
+  .container{
+    margin: 0 auto;
+    width: 100%;
+    max-width: @container-width;
+    box-sizing: border-box;
+  }
 }
 
 header{
@@ -20,10 +51,12 @@ header{
 
   .navbar{
     width: 100%;
+    min-height: @header-height;
     top: 0px;
-    background-color: darken(@main-color, 10%);
+    background-color: lighten(@main-color, 10%);
     a{
       color: @white;
+      text-decoration: none;
       &.active{
         color: @contrast!important;
       }
@@ -53,12 +86,9 @@ header{
   }
 }
 
-.container{
-  margin: 0 auto;
-  width: 100%;
-  max-width: @container-width;
-  box-sizing: border-box;
-}
+
+
+
 
 .highlights-grid {
     display: grid;
@@ -89,10 +119,14 @@ header{
     }
   }
 
-  .main{
+
+
+  .info{
     display: block;
     overflow: hidden;
+
     
+
     .title {
       display: block;
       white-space: nowrap;
@@ -100,9 +134,10 @@ header{
       overflow: hidden;
       text-overflow: ellipsis;
       border-radius: 4px;
+      text-decoration: none;
 
       span{
-        text-decoration: none;
+        text-decoration: none !important;
         color: var(--c-text-default);
         cursor: pointer;
       }
