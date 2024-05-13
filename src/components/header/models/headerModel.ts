@@ -2,7 +2,7 @@ import { Model } from 'backbone';
 
 
 
-class HeaderModel extends Model {
+export class HeaderModel extends Model {
     
     defaults() {
         return {
@@ -10,5 +10,3 @@ class HeaderModel extends Model {
         }
     }
 }
-
-export default HeaderModel;

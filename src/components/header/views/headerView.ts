@@ -5,7 +5,7 @@ import $ from 'jquery'
 import { headerTplManager } from "../templates/headerTemplateManager";
 
 
-class HeaderView extends View {
+export class HeaderView extends View {
   initialize() {
     this.$el = $('#header');
     this.render();
@@ -57,6 +57,3 @@ class HeaderView extends View {
     return this;
   }
 }
-
-
-export default HeaderView;
