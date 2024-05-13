@@ -2,10 +2,10 @@ import { View } from 'backbone';
 import $ from 'jquery';
 
 
-import HomeModel from '../models/HomeModel';
+import { HomeModel } from '../models/';
 
 
-class HomeView extends View<HomeModel> {
+export class HomeView extends View<HomeModel> {
     initialize() {
       this.$el = $("#app");
       this.render();
@@ -20,8 +20,9 @@ class HomeView extends View<HomeModel> {
               
               <main>
 
-                <section id="highlighted">
-                </section>
+                <section id="highlighted" class="section"></section>
+
+                <section id="all-games" class="section"></section>
 
                 <div id="trending"></div>
               </main>
@@ -30,5 +31,3 @@ class HomeView extends View<HomeModel> {
         return this;
     }
 }
-
-export default HomeView;
