@@ -1,10 +1,7 @@
 import { CollectionFetchOptions, Router } from 'backbone';
-import HeaderView from '../components/header/views/headerView';
-import HomeView from '../pages/views/homeView';
-import HomeModel from '../pages/models/HomeModel';
-import HeaderModel from '../components/header/models/headerModel';
-import { HighlightedGamesView } from '../components/gameHolders/views/highlightedGamesView';
-import { HighlightedGamesCollection } from "../components/gameHolders/collections/highlightedGamesCollection";
+import { HomeView, HomeModel} from '../pages';
+import { HeaderView , HeaderModel } from '../components/header/';
+import { HighlightedGamesView, HighlightedGamesCollection } from '../components/gameHolders/';
 
 const AppRouter = Router.extend({
 
@@ -44,6 +41,9 @@ const AppRouter = Router.extend({
         // Handle the error here
         console.error(error);
       });
+
+    
+
 
   },
 
