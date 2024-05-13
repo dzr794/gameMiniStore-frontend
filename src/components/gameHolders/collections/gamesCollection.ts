@@ -4,11 +4,11 @@ import { GameModel } from "../models/gameModel";
 
 
 const baseUrl = "http://localhost:3001";
-export class HighlightedGamesCollection extends Collection {
+export class GamesCollection extends Collection {
   model = GameModel;
 
 
-  url = `${baseUrl}/games/highlighted`;
+  url = `${baseUrl}/games/`;
   
   // create a fetch using async and await, handle the success and error with logs
   fetch(options?: CollectionFetchOptions|undefined): JQueryXHR {
@@ -27,33 +27,5 @@ export class HighlightedGamesCollection extends Collection {
 
 }
 
-
-/*
-
-const collection = new HighlightedGamesCollection();
-
-const fetchOptions: CollectionFetchOptions = {
-
-  data: {
-    // Your data here
-  },
-  method: 'GET',
-  headers: {
-    // Your headers here
-  },
-};
-
-collection.fetch(fetchOptions)
-  .then((response: JQueryXHR) => {
-    // Handle the successful response here
-    console.log(response);
-  })
-  .catch((error: Error) => {
-    // Handle the error here
-    console.error(error);
-  });
-
-*/
-  
 
 

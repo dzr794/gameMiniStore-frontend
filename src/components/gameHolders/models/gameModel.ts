@@ -1,7 +1,7 @@
 
 import { Model } from 'backbone';
 
-class GameModel extends Model {
+export class GameModel extends Model {
     
     defaults() {
         return {
@@ -10,9 +10,8 @@ class GameModel extends Model {
           price: null,
           publisher: "",
           ESRB: "",
+          image: "",
           // genres: ""
         }
     }
 }
-
-export default GameModel;
