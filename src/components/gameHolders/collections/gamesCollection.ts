@@ -1,12 +1,11 @@
 
 import { Collection, CollectionFetchOptions } from 'backbone';
 import { GameModel } from "../models/gameModel";
+import { baseUrl } from '../../../global/vars';
 
 
-const baseUrl = "http://localhost:3001";
 export class GamesCollection extends Collection {
   model = GameModel;
-
 
   url = `${baseUrl}/games/`;
   

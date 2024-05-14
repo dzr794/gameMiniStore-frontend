@@ -6,8 +6,6 @@ import { gameTplManager } from "../templates/gameTemplateManager";
 
 export class HighlightedGamesView extends View {
 
-
-  
   initialize() {
     this.$el = $("#highlighted");
 
@@ -18,21 +16,20 @@ export class HighlightedGamesView extends View {
     this.render();
   }
 
-  render() {
+  render(): this {
     const gamesJSON = this.collection.toJSON();
     
     if (gamesJSON.length < 1) return;
     
     const gameCardTallTemplate = _.template( gameTplManager.templates.gameCardTall );
-    
-
     const highlightsTemplate = _.template( gameTplManager.templates.highlights );
 
-    console.log("THE GAMES:",this.collection.toJSON());
+    // console.log("Highlighted games:",this.collection.toJSON());
 
     this.$el.html(highlightsTemplate({ 
-      gameCardTall: gameCardTallTemplate,
-      games: this.collection.toJSON() 
+      gameCardTemplate: gameCardTallTemplate,
+      games: this.collection.toJSON()
+      
     }));
 
     return this;

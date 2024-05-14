@@ -5,6 +5,7 @@ export let gameTplManager = {
     gameCardTall: "",
     gameCardWide: "",
     gameCardThin: "",
+    allGames: "",
   }
 };
 
@@ -13,13 +14,24 @@ gameTplManager.templates.highlights = [
     '<h1 class="section-title text-white" >Highlighted</h1>',
     '<div class="highlights-grid">',
       '<% games.forEach(function (game) { %>',
-        '<% console.log("single game", game); %>',
-        '<%= gameCardTall({gameData: game}) %>',
+        // '<% console.log("single game", game); %>',
+        '<%= gameCardTemplate({gameData: game}) %>',
       '<% }); %>',
     '</div>',
   '</div>',
 ].join('\n');
 
+gameTplManager.templates.allGames = [
+  '<div class="container">',
+    '<h1 class="section-title text-white" >All Games</h1>',
+    '<div class="highlights-grid">',
+      '<% games.forEach(function (game) { %>',
+        // '<% console.log("single game", game); %>',
+        '<%= gameCardTemplate({gameData: game}) %>',
+      '<% }); %>',
+    '</div>',
+  '</div>',
+].join('\n');
 
 gameTplManager.templates.gameCardTall = [
   '<a href="/game/<%= gameData.id %>" class="game gameCardTall text-decoration-none">',
@@ -49,7 +61,13 @@ gameTplManager.templates.gameCardWide = [
         '<span><%= gameData.title %></span>',
       '</div>',
       '<div class="deal">',
-          '<span class="price">$<%= gameData.price %></span>',
+          '<span class="price">',
+          '<% if(gameData.price > 0){ %>',
+            '$<%= gameData.price %>',
+          '<% }else{ %>',
+            'Free to Play',
+          '<% } %>',
+          '</span>',
       '</div>',
     '</div>',
   '</a>',

@@ -5,11 +5,8 @@ import { GamesCollection } from "../collections/gamesCollection";
 import { gameTplManager } from "../templates/gameTemplateManager";
 
 export class GamesView extends View {
-
-
-  
+    
   initialize() {
-    this.$el = $("#");
 
     this.collection = new GamesCollection();
     this.listenTo(this.collection, "reset", this.render);
@@ -23,16 +20,14 @@ export class GamesView extends View {
     
     if (gamesJSON.length < 1) return;
     
-    const gameCardTallTemplate = _.template( gameTplManager.templates.gameCardTall );
-    
+    const gameCardWideTemplate = _.template( gameTplManager.templates.gameCardWide );
+    const allGamesTemplate = _.template( gameTplManager.templates.allGames );
 
-    const highlightsTemplate = _.template( gameTplManager.templates.highlights );
+    // console.log("All games:",this.collection.toJSON());
 
-    console.log("THE GAMES:",this.collection.toJSON());
-
-    this.$el.html(highlightsTemplate({ 
-      gameCardTall: gameCardTallTemplate,
-      games: this.collection.toJSON() 
+    this.$el.html(allGamesTemplate({ 
+      gameCardTemplate: gameCardWideTemplate,
+      games: this.collection.toJSON()
     }));
 
     return this;

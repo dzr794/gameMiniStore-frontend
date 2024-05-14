@@ -1,9 +1,7 @@
 import { View } from 'backbone';
 import $ from 'jquery';
 
-
 import { HomeModel } from '../models/';
-
 
 export class HomeView extends View<HomeModel> {
     initialize() {

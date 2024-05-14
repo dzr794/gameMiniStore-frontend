@@ -1,1 +1,2 @@
-export * from './HomeModel'
+export * from './homeModel'
+export * from './userModel'
