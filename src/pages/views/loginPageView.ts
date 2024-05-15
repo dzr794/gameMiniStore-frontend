@@ -1,14 +1,14 @@
 import { EventsHash, View } from "backbone";
 import { baseUrl } from "../../global/vars";
-import { loginTplManager } from "../../components/forms/templates";
+import { formsTplManager } from "../../components/forms/templates";
 import _ from "underscore";
 
 
-export class LoginView extends View{
+export class LoginPageView extends View{
 
   initialize() {
     this.$el = $("#app");
-    this.render();
+    // this.render();
   }
 
   render() {

@@ -1,12 +1,12 @@
 import { View } from 'backbone';
 import $ from 'jquery';
 
-import { HomeModel } from '../models/';
+import { HomeModel } from '../models';
 
-export class HomeView extends View<HomeModel> {
+export class HomePageView extends View<HomeModel> {
     initialize() {
       this.$el = $("#app");
-      this.render();
+      // this.render();
     }
 
 
