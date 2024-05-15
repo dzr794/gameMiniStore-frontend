@@ -1,6 +1,6 @@
 import _ from "underscore";
 
-export let loginTplManager = {
+export let formsTplManager = {
   templates: {
     loginForm: "",
     inputEmail: "",
@@ -9,7 +9,7 @@ export let loginTplManager = {
   }
 };
 
-loginTplManager.templates.loginForm = [
+formsTplManager.templates.loginForm = [
   '<h1><%= subData.formName %></h1>',
   '<div class="alert alert-error" style="display:none;">',
   '</div>',
@@ -23,8 +23,7 @@ loginTplManager.templates.loginForm = [
   '<p><a href="/">Back to home page</a></p>'
 ].join('\n');
 
-loginTplManager.templates.inputEmail = [
-  '<% console.log("wenas?"); %>',
+formsTplManager.templates.inputEmail = [
   '<div class="control-group">',
     '<label class="control-label" for="<%= data.id %>"><%= data.name %></label>',
     '<div class="controls">',
@@ -33,7 +32,7 @@ loginTplManager.templates.inputEmail = [
   '</div>',
 ].join('\n');
 
-loginTplManager.templates.inputPassword = [
+formsTplManager.templates.inputPassword = [
   '<div class="control-group">',
     '<label class="control-label" for="<%= data.id %>"><%= data.name %></label>',
     '<div class="controls">',
@@ -42,7 +41,7 @@ loginTplManager.templates.inputPassword = [
   '</div>',
 ].join('\n');
 
-loginTplManager.templates.loginButton = [
+formsTplManager.templates.loginButton = [
   '<div class="control-group">',
     '<div class="controls">',
       '<button type="submit" class="btn" id="<%= data.id %>"><%= data.name %></button>',
