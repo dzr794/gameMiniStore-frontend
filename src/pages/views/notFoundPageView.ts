@@ -19,7 +19,8 @@ export class NotFoundPageView extends View{
     this.$el.html(`
       <header id="header"></header>
       <main class="not-found">
-        404 PAGE NOT FOUND
+        <h1>404 PAGE NOT FOUND</h1>
+        <a href="/" class="btn default">Back to home page</a>
       </main>
     `);
 
