@@ -13,13 +13,12 @@ export class HighlightedGamesView extends View {
     this.listenTo(this.collection, "reset", this.render);
     this.collection.fetch();
 
-    this.render();
   }
 
   render(): this {
     const gamesJSON = this.collection.toJSON();
     
-    if (gamesJSON.length < 1) return;
+    if (gamesJSON.length < 1) return this;
     
     const gameCardTallTemplate = _.template( gameTplManager.templates.gameCardTall );
     const highlightsTemplate = _.template( gameTplManager.templates.highlights );
@@ -28,7 +27,7 @@ export class HighlightedGamesView extends View {
 
     this.$el.html(highlightsTemplate({ 
       gameCardTemplate: gameCardTallTemplate,
-      games: this.collection.toJSON()
+      games: gamesJSON
       
     }));
 

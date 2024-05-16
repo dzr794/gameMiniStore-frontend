@@ -11,24 +11,25 @@ export class GamesView extends View {
     this.collection = new GamesCollection();
     this.listenTo(this.collection, "reset", this.render);
     this.collection.fetch();
-
-    this.render();
   }
 
-  render() {
+  render(): this {
+
     const gamesJSON = this.collection.toJSON();
     
-    if (gamesJSON.length < 1) return;
+    if (gamesJSON.length < 1) return this;
     
     const gameCardWideTemplate = _.template( gameTplManager.templates.gameCardWide );
     const allGamesTemplate = _.template( gameTplManager.templates.allGames );
 
     // console.log("All games:",this.collection.toJSON());
 
-    this.$el.html(allGamesTemplate({ 
-      gameCardTemplate: gameCardWideTemplate,
-      games: this.collection.toJSON()
-    }));
+    this.$el.html(
+      allGamesTemplate({
+        gameCardTemplate: gameCardWideTemplate,
+        games: gamesJSON
+      })
+    );
 
     return this;
   }
