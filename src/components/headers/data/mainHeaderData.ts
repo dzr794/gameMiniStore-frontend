@@ -10,16 +10,10 @@ export const mainHeaderData = {
       template: navLinkTemplate,
       buttonData: {
         name: 'Store',
-        url: 'store'
+        url: 'games'
       }
     },
-    {
-      template: navLinkTemplate,
-      buttonData: {
-        name: 'Library',
-        url: 'library'
-      }
-    },
+    
     
   ]
 };
