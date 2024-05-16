@@ -1,15 +1,15 @@
-@main-color: hwb(0 13% 87%);
-@white: hwb(0 100% 0%);
-@accent: hwb(209 30% 10%);
-@dark-blue: hwb(207 0% 92%);
+@main-color: #212121;
+@white: #ffffff;
+@accent: #4d9ce5;
+@dark-blue: #000b14;
 
-@bg-dark-3: hwb(231 15% 80%);
-@border-dark-1: hwb(227 18% 77%);
+@bg-dark-3: #262833;
+@border-dark-1: #2e313b;
 
 @header-height: 70px;
 
 @section-spacing: 50px;
-@section-border-top-color: @bg-dark-3; 
+@section-border-top-color: #262833; 
 
 
 @container-width: var(--bs-breakpoint-xl);
@@ -92,16 +92,16 @@ main {
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr;
-    grid-template-areas: "search-panel filtered-games";
+    grid-template-areas: "filters-panel filtered-games";
     min-height: 100vh;
     gap: 20px;
 
-    #search-panel{
-      grid-area: search-panel;
+    #filters-panel{
+      grid-area: filters-panel;
       background-color: lighten(@main-color, 20%);
       border-radius: 5px;
     }
-
+  
     #filtered-games{
       grid-area: filtered-games;
       background-color: lighten(@main-color, 20%);
