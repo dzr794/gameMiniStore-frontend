@@ -11,7 +11,7 @@ export let headerTplManager = {
 
 headerTplManager.templates.header = [
   '<nav class="navbar navbar-expand-lg">',
-    '<div class="container-fluid">',
+    '<div class="container">',
 
       '<a class="navbar-brand" href="/">Vapor</a>',
 
@@ -29,7 +29,6 @@ headerTplManager.templates.header = [
 
         '</ul>',
 
-        '<%= searchForm({searchFormData: subData.searchFormData}) %>',
         
       '</div>',
     '</div>',
