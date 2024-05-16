@@ -27,12 +27,8 @@ const AppRouter = Router.extend({
     "home":                   "home",
     "login":                  "login",
     "dashboard":              "adminPage",
-    "games":                  "listGames",
-    "games/highlighted":      "highlightedGames",
-    "publisher":              "listPublishers",
-    "search/:query":          "search",
-    "search/:query/p:page":   "search",
-    "*notfound":              "notFound"
+    "games":                  "findGames",
+    "*404":                   "notFound"
   },
 
   home: homeRouterFunction,
@@ -43,10 +39,6 @@ const AppRouter = Router.extend({
 
   notFound: notFoundRouterFunction,
 
-  search: function(query:string, page:string) {
-    console.log(query);
-    console.log(page);
-  }
 
 });
 
