@@ -1,1 +1,1 @@
-export * from './loginTemplateManager'
+export * from './formsTemplateManager'

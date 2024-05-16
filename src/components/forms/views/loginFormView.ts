@@ -2,14 +2,13 @@ import { EventsHash, View } from 'backbone';
 import _ from 'underscore';
 import $ from 'jquery'
 
-import { loginTplManager } from "../templates/loginTemplateManager";
+import { formsTplManager } from "../templates/formsTemplateManager";
 import { baseUrl } from '../../../global/vars';
 
 
 export class LoginFormView extends View {
   initialize() {
     this.$el = $('#login-form');
-    this.render();
   }
 
   events(): EventsHash {
@@ -46,29 +45,15 @@ export class LoginFormView extends View {
     });
   }
   
-  render() {
+  render( subData:any ) {
 
-    const subData = {
-      formName: "Login",
-      inputEmailData: {
-        id: "inputEmail",
-        name: "Email"
-      },
-      inputPasswordData: {
-        id: "inputPassword",
-        name: "Password"
-      },
-      loginButtonData: {
-        id: "loginButton",
-        name: "Button"
-      },
-    };
+    
 
-    const inputEmailTemplate = _.template(loginTplManager.templates.inputEmail);
-    const inputPasswordTemplate = _.template(loginTplManager.templates.inputPassword);
-    const loginButtonTemplate = _.template(loginTplManager.templates.loginButton);
+    const inputEmailTemplate = _.template(formsTplManager.templates.inputEmail);
+    const inputPasswordTemplate = _.template(formsTplManager.templates.inputPassword);
+    const loginButtonTemplate = _.template(formsTplManager.templates.loginButton);
 
-    const loginFormTemplate = _.template(loginTplManager.templates.loginForm);
+    const loginFormTemplate = _.template(formsTplManager.templates.loginForm);
 
 
     this.$el.html(

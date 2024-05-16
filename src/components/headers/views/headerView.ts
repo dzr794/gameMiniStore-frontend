@@ -8,34 +8,10 @@ import { headerTplManager } from "../templates/headerTemplateManager";
 export class HeaderView extends View {
   initialize() {
     this.$el = $('#header');
-    this.render();
   }
   
-  render() {
+  render( subData ) {
 
-    const subData = {
-      storeData: {
-        name: 'Store',
-        url: 'store'
-      },
-      libraryData: {
-        name: 'Library',
-        url: 'library'
-      },
-      addNewData: {
-        dropdownName: 'Add game',
-        links: [
-          {
-            url: 'newGame',
-            title: 'New Game'
-          },
-          {
-            url: 'newPublisher',
-            title: 'New Publisher'
-          }
-        ]
-      }
-    };
 
     // const headerTemplate = _.template(headerTplManager.templates.header);
     const navLinkTemplate = _.template(headerTplManager.templates.navLink);

@@ -23,10 +23,9 @@ headerTplManager.templates.header = [
       '<div class="collapse navbar-collapse" id="navbarSupportedContent">',
         '<ul class="navbar-nav me-auto mb-2 mb-lg-0">',
           
-          '<%= navLink({linkData: subData.storeData}) %>',
-          '<%= navLink({linkData: subData.libraryData}) %>',
-          
-          '<%= navDropdown({dropdownData: subData.addNewData}) %>',
+          '<% subData.buttons.forEach(function (button) { %>',
+            '<%= button.template({linkData: button.buttonData}) %>',
+          '<% }); %>',
 
         '</ul>',
 
@@ -40,10 +39,10 @@ headerTplManager.templates.header = [
 headerTplManager.templates.navDropdown = [
   '<li class="nav-item dropdown">',
     '<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">',
-      '<%= dropdownData.dropdownName %>',
+      '<%= linkData.dropdownName %>',
     '</a>',
     '<ul class="dropdown-menu">',
-      '<% dropdownData.links.forEach(function (link) { %>',
+      '<% linkData.links.forEach(function (link) { %>',
         '<li><a class="dropdown-item" href="<%= link.url %>"><%= link.title %></a></li>',
       '<% }); %>',
     '</ul>',
