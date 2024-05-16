@@ -1,3 +1,4 @@
-export * from './homeView'
-export * from './loginView'
 export * from './adminPageView'
+export * from './homePageView'
+export * from './loginPageView'
+export * from './notFoundPageView'
