@@ -10,7 +10,7 @@ export let formsTplManager = {
 };
 
 formsTplManager.templates.loginForm = [
-  '<h1><%= subData.formName %></h1>',
+  '<h1><%= title %></h1>',
   '<div class="alert alert-error" style="display:none;">',
   '</div>',
   '<form class="form-horizontal">',
@@ -20,7 +20,7 @@ formsTplManager.templates.loginForm = [
     '<%= loginButton({ data: subData.loginButtonData }) %>',
     
   '</form>',
-  '<p><a href="/">Back to home page</a></p>'
+  '<a href="/" class="btn default">Back to home page</a>'
 ].join('\n');
 
 formsTplManager.templates.inputEmail = [

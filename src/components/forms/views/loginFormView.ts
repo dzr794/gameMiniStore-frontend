@@ -4,9 +4,10 @@ import $ from 'jquery'
 
 import { formsTplManager } from "../templates/formsTemplateManager";
 import { baseUrl } from '../../../global/vars';
+import { LoginFormModel } from '../models';
 
 
-export class LoginFormView extends View {
+export class LoginFormView extends View<LoginFormModel> {
   initialize() {
     this.$el = $('#login-form');
   }
@@ -47,8 +48,6 @@ export class LoginFormView extends View {
   
   render( subData:any ) {
 
-    
-
     const inputEmailTemplate = _.template(formsTplManager.templates.inputEmail);
     const inputPasswordTemplate = _.template(formsTplManager.templates.inputPassword);
     const loginButtonTemplate = _.template(formsTplManager.templates.loginButton);
@@ -58,6 +57,7 @@ export class LoginFormView extends View {
 
     this.$el.html(
       loginFormTemplate({
+        title: this.model.get("title"),
         inputEmail: inputEmailTemplate, 
         inputPassword: inputPasswordTemplate,
         loginButton: loginButtonTemplate,

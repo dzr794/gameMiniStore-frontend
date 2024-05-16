@@ -3,7 +3,7 @@ export const loginFormData = {
   formName: "Login",
   inputEmailData: {
     id: "inputEmail",
-    name: "Emailis"
+    name: "Email"
   },
   inputPasswordData: {
     id: "inputPassword",
