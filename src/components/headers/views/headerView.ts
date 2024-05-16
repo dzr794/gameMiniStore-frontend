@@ -16,7 +16,7 @@ export class HeaderView extends View {
     // const headerTemplate = _.template(headerTplManager.templates.header);
     const navLinkTemplate = _.template(headerTplManager.templates.navLink);
     const navDropdownTemplate = _.template(headerTplManager.templates.navDropdown);
-    const searchFormTemplate = _.template(headerTplManager.templates.searchForm);
+    
 
     const headerTemplate = _.template(headerTplManager.templates.header);
 
@@ -25,7 +25,7 @@ export class HeaderView extends View {
       headerTemplate({
         navLink: navLinkTemplate, 
         navDropdown: navDropdownTemplate,
-        searchForm: searchFormTemplate,
+        
         subData: subData
       })
     );
