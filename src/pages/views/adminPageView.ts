@@ -4,7 +4,7 @@ export class AdminPageView extends View{
 
   initialize() {
     this.$el = $("#app");
-    this.render();
+    // this.render();
   }
 
   events(): EventsHash {
@@ -19,7 +19,9 @@ export class AdminPageView extends View{
     this.$el.html(`
       <header id="header"></header>
       <main>
-        ADMIN VIEW
+        <section id="gamesAdminList" class="section">
+          
+        </section>
       </main>
     `);
 
