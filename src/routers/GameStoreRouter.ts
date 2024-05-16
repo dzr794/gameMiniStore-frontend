@@ -2,7 +2,7 @@ import _ from 'underscore';
 import { Router } from 'backbone';
 
 
-import { adminRouterFunction, homeRouterFunction, notFoundRouterFunction } from './functions';
+import { adminRouterFunction, gamesRouterFunction, homeRouterFunction, notFoundRouterFunction } from './functions';
 import { loginRouterFunction } from './functions/loginRouterFunction';
 
 // Tell jQuery to watch for any 401 or 403 errors and handle them appropriately
@@ -32,6 +32,8 @@ const AppRouter = Router.extend({
   },
 
   home: homeRouterFunction,
+
+  findGames: gamesRouterFunction,
 
   login: loginRouterFunction,
 
