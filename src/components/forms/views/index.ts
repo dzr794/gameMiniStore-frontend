@@ -1,1 +1,2 @@
-export * from './loginFormView'
+export * from './loginFormView';
+export * from './gameFiltersView';

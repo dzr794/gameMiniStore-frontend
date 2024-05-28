@@ -5,7 +5,10 @@ export let formsTplManager = {
     loginForm: "",
     inputEmail: "",
     inputPassword: "",
-    loginButton: ""
+    loginButton: "",
+    gameFilters: "",
+    filterDropdownWrapper: "",
+    filterDropdownButton: "",
   }
 };
 
@@ -13,7 +16,7 @@ formsTplManager.templates.loginForm = [
   '<h1><%= title %></h1>',
   '<div class="alert alert-error" style="display:none;">',
   '</div>',
-  '<form class="form-horizontal">',
+  '<form class="form">',
 
     '<%= inputEmail({ data: subData.inputEmailData }) %>',
     '<%= inputPassword({ data: subData.inputPasswordData }) %>',
@@ -48,3 +51,41 @@ formsTplManager.templates.loginButton = [
     '</div>',
   '</div>',
 ].join('\n');
+
+
+formsTplManager.templates.gameFilters = [
+  '<div class="game-filter-wrapper">',
+    '<% console.log(this) %>',
+    '<h3><%= subData.title %></h3>',
+    '<% subData.filters.forEach(function (filter) { %>',
+      '<%= filter.template({ data: filter.data }) %>',
+    '<% }); %>',
+  '</div>',
+].join('\n');
+
+
+formsTplManager.templates.filterDropdownWrapper = [
+'<div class="filter-dropdown">',
+
+  '<button class="filter-dropdown-btn show" data-activate-dropdown="<%= data.filterId %>">',
+    '<span><%= data.title %></span>',
+    '<img class="chev" src="/src/assets/img/chev-down.svg" alt="">',
+  '</button>',
+
+  '<div class="filters-btn-wrapper" data-filter-dropdown="<%= data.filterId %>">',
+
+    '<% data.buttons.forEach(function (button) { %>',
+        '<%= button.template({data: button.data}) %>',
+    '<% }); %>',
+
+  '</div>',
+'</div>',
+].join('\n');
+
+formsTplManager.templates.filterDropdownButton = [
+  '<button data-url="<%= data.url %>" type="button" class="filter-btn">',
+    '<span><%= data.filterName %></span> ',
+    '<img class="chev" src="/src/assets/img/check_mark_white.svg" alt="">',
+  '</button data-url="">',
+].join('\n');
+

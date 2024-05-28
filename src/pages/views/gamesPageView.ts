@@ -17,7 +17,7 @@ export class GamesPageView extends View {
               <main>
 
                 <section id="filter-games-section" class="section container">
-                  <div id="search-panel">SEARCH</div>
+                  <div id="filters-panel">FILTERS</div>
                   <div id="filtered-games">FILTERED GAMES</div>
                 </section>
                 

@@ -1,10 +1,38 @@
-@main-color: #212121;
 @white: #ffffff;
-@accent: #4d9ce5;
-@dark-blue: #000b14;
+@black: #131313;
+@tint: #33485e;
+@dark-accent: #33485e;
 
-@bg-dark-3: #262833;
-@border-dark-1: #2e313b;
+@main-color: mix(@black, @tint, 70%);
+
+
+
+@bg-dark-l1: lighten(@main-color, 5%);
+@bg-dark-l2: lighten(@main-color, 10%);
+@bg-dark-l3: lighten(@main-color, 15%);
+@bg-dark-l4: lighten(@main-color, 20%);
+@bg-dark-l5: lighten(@main-color, 25%);
+@bg-dark-l6: lighten(@main-color, 30%);
+
+@dark-accent-l1: lighten(@dark-accent, 10%);
+@dark-accent-l2: lighten(@dark-accent, 20%);
+@dark-accent-l3: lighten(@dark-accent, 30%);
+@dark-accent-l4: lighten(@dark-accent, 40%);
+@dark-accent-l5: lighten(@dark-accent, 50%);
+
+@accent: saturate(@dark-accent-l3, 40%);
+
+@bg-dark-d1: darken(@main-color, 2%);
+@bg-dark-d2: darken(@main-color, 5%);
+@bg-dark-d3: darken(@main-color, 10%);
+
+@bg-light-d1: darken(@white, 10%);
+@bg-light-d2: darken(@white, 20%);
+@bg-light-d3: darken(@white, 30%);
+
+@panel-color: @bg-dark-l2;
+
+@main-font: 'Roboto', sans-serif;
 
 @header-height: 70px;
 
@@ -98,13 +126,85 @@ main {
 
     #filters-panel{
       grid-area: filters-panel;
-      background-color: lighten(@main-color, 20%);
+      background-color: @panel-color;
       border-radius: 5px;
+      padding: 15px;
+      
+      .game-filter-wrapper{
+        .filter-dropdown{
+          padding: 15px 0;
+          border-top: 1px solid @bg-dark-l4;
+
+          .filter-dropdown-btn {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            border: none;
+            background: none;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 10px;
+            color: @white;
+            .chev{
+              width: 15px;
+              height: 15px;
+              transition: transform 0.3s ease-in-out;
+              transform: rotate(180deg);
+
+              &.open{
+                transform: rotate(0deg);
+              }
+              img{
+                width: 100%;
+                object-fit: contain;
+              }
+            }
+          }
+          .filters-btn-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            padding: 10px 0;
+
+            .filter-btn{
+              background: none;
+              border: none;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
+              border-radius: 5px;
+              width: 100%;
+
+              &.is-selected{
+                background-color: mix(#fff, @bg-dark-l4, 2%);
+                span{
+                  filter: brightness(1);
+                }
+                img{
+                  display: block;
+                }
+              }
+              span{
+                font-size: 0.8em;
+                color: @white;
+                filter: brightness(0.7);
+              }
+              img{
+                width: 10px;
+                height: 10px;
+                filter: brightness(0.7);
+                display: none;
+              }
+            }
+          }
+        }
+      }
     }
   
     #filtered-games{
       grid-area: filtered-games;
-      background-color: lighten(@main-color, 20%);
+      background-color: @panel-color;
       border-radius: 5px;
     }
   }
@@ -117,7 +217,7 @@ main {
     border-top: 1px solid @section-border-top-color;
 
     &:nth-child(2n){
-      background-color: darken(@main-color, 2%);
+      background-color: @bg-dark-d1;
     }
 
     .section-title{
@@ -134,7 +234,7 @@ main {
   }
 
   .game{
-    background-color: @bg-dark-3;
+    background-color: @bg-dark-l4;
     font-size: 1.1rem;
     overflow: hidden;
     border-radius: 4px;
@@ -174,7 +274,7 @@ main {
 
         span{
           text-decoration: none !important;
-          color: var(--c-text-default);
+          color: @white;
           cursor: pointer;
         }
       }
@@ -184,10 +284,11 @@ main {
         text-align: right;
         padding: 5px 10px;
         white-space: nowrap;
-        border-top: 1px solid @border-dark-1;
+        border-top: 1px solid @bg-dark-l5;
         .price {
           font-size: 1.1rem;
-          color: #9497a2;
+          font-weight: 600;
+          color: @accent;
         }
       }
     }
@@ -290,8 +391,32 @@ main {
   flex-grow: 1;
   
   h1{
-    color: @dark-blue;
+    color: @accent;
     font-weight: 600;
     font-size: 3rem;
+  }
+
+  .alert{
+
+  }
+
+  .form{
+    margin-bottom: 20px;
+    .control-group{
+      .control-label{
+        color: @main-color;
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+      .controls{
+        button{
+          margin: auto;
+          margin-top: 20px;
+          width: 80%;
+          padding: 5px 10px;
+          background-color: @accent;
+        }
+      }
+    }
   }
 }
