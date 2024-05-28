@@ -26,7 +26,7 @@ export class HighlightedGamesView extends View {
     // console.log("Highlighted games:",this.collection.toJSON());
 
     this.$el.html(highlightsTemplate({ 
-      gameCardTemplate: gameCardTallTemplate,
+      gameCard: gameCardTallTemplate,
       games: gamesJSON
       
     }));

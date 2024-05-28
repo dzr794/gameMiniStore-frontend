@@ -5,6 +5,7 @@ export let gameTplManager = {
     gameCardTall: "",
     gameCardWide: "",
     gameCardThin: "",
+    gameCardThinAdmin: "",
     allGames: "",
   }
 };
@@ -15,7 +16,7 @@ gameTplManager.templates.highlights = [
     '<div class="highlights-grid">',
       '<% games.forEach(function (game) { %>',
         // '<% console.log("single game", game); %>',
-        '<%= gameCardTemplate({gameData: game}) %>',
+        '<%= gameCard({gameData: game}) %>',
       '<% }); %>',
     '</div>',
   '</div>',
@@ -27,7 +28,7 @@ gameTplManager.templates.allGames = [
     '<div class="highlights-grid">',
       '<% games.forEach(function (game) { %>',
         // '<% console.log("single game", game); %>',
-        '<%= gameCardTemplate({gameData: game}) %>',
+        '<%= gameCard({gameData: game}) %>',
       '<% }); %>',
     '</div>',
   '</div>',
@@ -81,6 +82,7 @@ gameTplManager.templates.gameCardThin = [
       '<img src="<%= gameData.image %>"',
         'alt="<%= gameData.title %> banner">',
     '</div>',
+
     '<div class="info">',
       '<div class="title text-white">',
         '<span><%= gameData.title %></span>',
@@ -89,5 +91,25 @@ gameTplManager.templates.gameCardThin = [
           '<span class="price">$<%= gameData.price %></span>',
       '</div>',
     '</div>',
+
+  '</a>',
+].join('\n');
+
+gameTplManager.templates.gameCardThinAdmin = [
+  '<a href="/game/<%= gameData.id %>" class="game gameCardThinAdmin text-decoration-none">',
+    '<div class="banner" >',
+      '<img src="<%= gameData.image %>"',
+        'alt="<%= gameData.title %> banner">',
+    '</div>',
+
+    '<div class="info">',
+      '<div class="title text-white">',
+        '<span><%= gameData.title %></span>',
+      '</div>',
+      '<div class="deal">',
+          '<span class="price">$<%= gameData.price %></span>',
+      '</div>',
+    '</div>',
+    
   '</a>',
 ].join('\n');
