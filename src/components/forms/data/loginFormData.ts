@@ -11,7 +11,7 @@ export const loginFormData = {
   },
   loginButtonData: {
     id: "loginButton",
-    name: "Button"
+    name: "Login"
   },
 };
 
