@@ -1,4 +1,5 @@
-import { GamesCollection, GamesView, HighlightedGamesCollection, HighlightedGamesView } from "../../components/gameHolders";
+import { template } from "underscore";
+import { GamesCollection, GamesView, HighlightedGamesCollection, HighlightedGamesView, gameTplManager } from "../../components/gameHolders";
 import { HeaderModel, HeaderView, mainHeaderData } from "../../components/headers";
 import { HomeModel, HomePageView } from "../../pages";
 
@@ -27,7 +28,8 @@ export const homeRouterFunction = () => {
   gamesCollection.fetch({ method: 'GET' })
     .then((response: JQueryXHR) => {
       // console.log({response});
-      const gamesView = new GamesView( {el: '#all-games', collection: gamesCollection} );
+      
+      const gamesView = new GamesView( {el: '#all-games', collection: gamesCollection, templateString: gameTplManager.templates.gameCardWide} );
       gamesView.render();
     })
     .catch((error: Error) => {
