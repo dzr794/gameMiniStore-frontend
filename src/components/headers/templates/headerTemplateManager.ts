@@ -32,7 +32,7 @@ headerTplManager.templates.header = [
         
       '</div>',
     '</div>',
-  '</nav>'
+  '</nav>',
 ].join('\n');
 
 headerTplManager.templates.navDropdown = [
@@ -45,7 +45,7 @@ headerTplManager.templates.navDropdown = [
         '<li><a class="dropdown-item" href="<%= link.url %>"><%= link.title %></a></li>',
       '<% }); %>',
     '</ul>',
-  '</li>'
+  '</li>',
 ].join('\n');
 
 headerTplManager.templates.navLink = [

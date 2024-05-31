@@ -1,19 +1,15 @@
-import _ from "underscore";
-import { headerTplManager } from "../templates";
+import { HeaderData } from "../../../types";
 
-const navLinkTemplate = _.template(headerTplManager.templates.navLink);
-const navDropdownTemplate = _.template(headerTplManager.templates.navDropdown);
 
-export const mainHeaderData = {
+export const mainHeaderData:HeaderData = {
   buttons: [
     {
-      template: navLinkTemplate,
+      componentType: 'navLink',
       buttonData: {
         name: 'Store',
         url: 'games'
       }
     },
     
-    
-  ]
+  ],
 };

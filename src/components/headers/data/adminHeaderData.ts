@@ -1,42 +1,24 @@
-import _ from "underscore";
-import { headerTplManager } from "../templates";
+import { HeaderData } from "../../../types";
 
-const navLinkTemplate = _.template(headerTplManager.templates.navLink);
-const navDropdownTemplate = _.template(headerTplManager.templates.navDropdown);
-
-export const adminHeaderData = {
+export const adminHeaderData:HeaderData = {
   buttons: [
     {
-      template: navDropdownTemplate,
+      componentType: 'navDropdown',
       buttonData: {
-        dropdownName: 'Games',
+        name: 'Games',
         links: [
           {
+            name: 'New Game',
             url: 'newGame',
-            title: 'New Game'
           },
           {
+            name: 'Edit Game',
             url: 'editGame',
-            title: 'Edit Game'
           }
         ]
       }
-    },
-    {
-      template: navDropdownTemplate,
-      buttonData: {
-        dropdownName: 'Games',
-        links: [
-          {
-            url: 'newPublisher',
-            title: 'New Publisher'
-          },
-          {
-            url: 'editPublisher',
-            title: 'Edit Publisher'
-          }
-        ]
-      }
-    },
-  ]
+    }
+    
+  ],
 };
+
