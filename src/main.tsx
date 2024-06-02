@@ -1,4 +1,4 @@
-import React from 'react'
+
 import ReactDOM from 'react-dom/client'
 import { RouterProvider } from "react-router-dom";
 
@@ -8,7 +8,7 @@ import './assets/css/style.min.css'
 import { router } from './routers/MainRouter.ts';
 
 
-
+// TODO: Add redux context
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   
