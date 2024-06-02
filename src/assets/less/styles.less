@@ -46,7 +46,6 @@
   --bs-heading-color: @white;
 }
 
-
 header{
   position: fixed;
   width: 100%;
@@ -123,12 +122,15 @@ main {
     grid-template-areas: "filters-panel filtered-games";
     min-height: 100vh;
     gap: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
 
     #filters-panel{
       grid-area: filters-panel;
       background-color: @panel-color;
       border-radius: 5px;
       padding: 15px;
+      min-width: 230px;
       
       .game-filter-wrapper{
         .filter-dropdown{
@@ -175,6 +177,8 @@ main {
               justify-content: space-between;
               border-radius: 5px;
               width: 100%;
+              text-decoration: none;
+              padding: 5px 10px;
 
               &.is-selected{
                 background-color: mix(#fff, @bg-dark-l4, 2%);
