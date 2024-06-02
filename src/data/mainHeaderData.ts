@@ -1,4 +1,4 @@
-import { HeaderData } from "../../../types";
+import { HeaderData } from "../types";
 
 
 export const mainHeaderData:HeaderData = {
@@ -7,7 +7,7 @@ export const mainHeaderData:HeaderData = {
       componentType: 'navLink',
       buttonData: {
         name: 'Store',
-        url: 'games'
+        url: '/game/filters/'
       }
     },
     

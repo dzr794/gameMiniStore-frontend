@@ -1,4 +1,4 @@
-import { HeaderData } from "../../../types";
+import { HeaderData } from "../types";
 
 export const adminHeaderData:HeaderData = {
   buttons: [
