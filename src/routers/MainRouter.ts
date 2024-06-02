@@ -1,17 +1,42 @@
-import React from 'react'
+import { createElement } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 
-import { Home } from '../pages';
+import { HomePage, NotFoundPage, GamesPage, LoginPage, GameDetailsPage, FilteredGamesGrid } from '../pages';
 
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: React.createElement(Home),
+    element: createElement(HomePage),
+    errorElement: createElement(NotFoundPage)
   },
   {
-    path: "/",
-    element: React.createElement(Home),
+    path: "/game/filters/",
+    element: createElement(GamesPage),
+
+    children: [
+      {
+        path: '/game/filters/',
+        element: createElement(FilteredGamesGrid)
+      },
+      {
+        path: '/game/filters/price/:price',
+        element: createElement(FilteredGamesGrid)
+      },
+      {
+        path: '/game/filters/publisher/:publisher',
+        element: createElement(FilteredGamesGrid)
+      }
+    ]
   },
+  {
+    path: "/game/:gameId",
+    element: createElement(GameDetailsPage)
+  },
+  {
+    path: "/login",
+    element: createElement(LoginPage)
+  },
+  
 ]);
 
