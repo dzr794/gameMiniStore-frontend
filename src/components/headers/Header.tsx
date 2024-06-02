@@ -1,12 +1,9 @@
-
-import { NavLink } from "./NavLink";
 import { NavDropdown } from "./NavDropdown";
 import { ButtonData } from "../../types";
+import { NavLink } from 'react-router-dom';
 
 export const Header = ( { buttons }: { buttons: ButtonData[] }) => {
-  console.log(buttons);
-
-
+console.log(buttons);
 
   return (
   <header id="header">
@@ -28,7 +25,13 @@ export const Header = ( { buttons }: { buttons: ButtonData[] }) => {
                 switch (componentType) {
                   case 'navLink':
                     if ('url' in buttonData) {
-                      return <NavLink key={buttonData.name} name={buttonData.name} url={buttonData.url} />;
+                      return (
+                        <li className="nav-item" key={buttonData.name}>
+                          <NavLink to={ buttonData.url } className={ ({isActive}) => isActive ? 'active' : '' }>
+                            {buttonData.name}
+                          </NavLink>
+                        </li>
+                      )
                     }else{
                       break;
                     }
