@@ -1,2 +1,6 @@
-export * from './Home'
-// export * from './templates'
+export * from './FilteredGamesGrid'
+export * from './GameDetailsPage';
+export * from './GamesPage'
+export * from './HomePage'
+export * from './LoginPage'
+export * from './NotFoundPage'
